@@ -68,14 +68,15 @@ DIN rail, breakers, and terminal blocks laid out and landed:
 
 The 24 VDC supply on its own DIN rail behind its own branch breaker, output to the red (+24 V) and black (0 V) push-in terminal blocks on the rear panel. Color-coding held strictly so polarity is readable at a glance.
 
-![24 VDC power supply](../images/test-stand-24vdc-power-supply.jpg)
-![Rear DC distribution terminal blocks](../images/test-stand-dc-panel-rear.jpg)
+![24 VDC power supply on its own DIN rail behind a branch breaker](../images/test-stand-24vdc-power-supply.jpg)
 
 ### 6. Operator panel
 
 Laid out and drilled the metal sub-panel for three toggle switches and three indicator lamps, mounted the devices, then wired each one individually back to the terminal blocks and continuity-checked it before the bus was energized.
 
-![DC control panel with toggles and pilot lamps](../images/test-stand-dc-panel-lamps.jpg)
+![Rear of the stand: red and black terminal blocks feeding the operator sub-panel, lamps still unlit](../images/test-stand-dc-panel-rear.jpg)
+
+*Wired and cold-checked, still de-energized — the lamps are dark.*
 
 ---
 
@@ -105,7 +106,9 @@ Nothing gets energized until it has been proven cold.
 
 **Result:** the stand energized cleanly — 24 VDC present and correct on the control bus, all three pilot lamps operating from their toggles, and the motor starting, running, and stopping from the local disconnect.
 
-![Completed and energized DC control panel](../images/test-stand-dc-panel-lamps.jpg)
+![The same operator panel energized, with the red, amber and green pilot lamps lit](../images/test-stand-dc-panel-lamps.jpg)
+
+*The same panel as Step 6, now energized — all three pilot lamps lit and switching from their toggles.*
 
 ---
 

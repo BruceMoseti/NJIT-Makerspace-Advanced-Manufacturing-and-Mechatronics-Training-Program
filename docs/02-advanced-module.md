@@ -46,8 +46,16 @@ The same discipline applied to the electrical side: instructions, BOM, staged to
 - Ground continuity from the cord's equipment ground to the enclosure and to the frame, verified with a meter.
 - Color convention held consistently so the next technician can read the panel.
 
-![AC enclosure with breaker and terminal blocks](../images/test-stand-ac-enclosure-breaker.jpg)
-![24 VDC power supply on DIN rail](../images/test-stand-24vdc-power-supply.jpg)
+<table>
+<tr>
+<td width="50%"><img src="../images/test-stand-ac-enclosure-breaker.jpg" width="100%" alt="AC enclosure interior with a DIN-rail mounted Eaton miniature circuit breaker, terminal blocks and dressed line, neutral and ground conductors"></td>
+<td width="50%"><img src="../images/test-stand-24vdc-power-supply.jpg" width="100%" alt="Enclosure interior with a Mean Well MDR-60-24 DIN-rail 24 VDC power supply beside its branch breaker"></td>
+</tr>
+<tr>
+<td align="center"><sub>AC enclosure: breaker, terminal blocks and bonding</sub></td>
+<td align="center"><sub>DC side: MDR-60-24 supply on its own branch breaker</sub></td>
+</tr>
+</table>
 
 **Post-assembly verification, before first energization:**
 1. Visual inspection against the drawing, terminal by terminal.
@@ -147,9 +155,18 @@ Closed the module on where these pieces go in industry: conveyor start/stop and 
 
 Alongside the PLC work, bench sessions on the analog and microcontroller side — useful context for why industrial I/O modules behave the way they do.
 
-![Breadboard analog circuit](../images/breadboard-analog-circuit.jpg)
-![Arduino Uno with breadboard circuit](../images/arduino-breadboard-circuit.jpg)
-![Component and jumper wire kit](../images/electronics-component-kit.jpg)
+<table>
+<tr>
+<td width="33%"><img src="../images/breadboard-analog-circuit.jpg" width="100%" alt="Solderless breadboard with two DIP integrated circuits, resistors, jumper wires and a toggle switch, powered from Va and Vb bench supplies"></td>
+<td width="33%"><img src="../images/arduino-breadboard-circuit.jpg" width="100%" alt="Arduino Uno on a baseplate wired to a breadboard circuit with potentiometers, capacitors and a diode"></td>
+<td width="33%"><img src="../images/electronics-component-kit.jpg" width="100%" alt="Organized tray of jumper wires, resistors, capacitors and diodes beside a bag of mechanical fasteners"></td>
+</tr>
+<tr>
+<td align="center"><sub>Multi-stage analog circuit on the bench breadboard</sub></td>
+<td align="center"><sub>Arduino Uno reading analog inputs and driving outputs</sub></td>
+<td align="center"><sub>Components staged and organized before a build</sub></td>
+</tr>
+</table>
 
 - Built multi-stage circuits with 8-pin DIP ICs on a bench breadboard, powered from dual `Va`/`Vb` supplies, with a toggle switch for input state, and characterized the output with a meter and scope.
 - Wired an Arduino Uno to a breadboard circuit with potentiometer inputs, filter capacitors and a diode, on a 12 VDC supply — reading analog inputs and driving outputs in code, which is the same read-decide-write pattern as a PLC scan.

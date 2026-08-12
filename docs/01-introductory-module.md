@@ -81,7 +81,9 @@ Built pneumatic circuits from supply through to actuator:
 
 **Safety:** vent stored pressure before breaking any connection, restrain tubing so a released line cannot whip, and never point a blow gun at skin.
 
-![Pneumatic circuit with FRL, ball valve and blow gun](../images/pneumatics-frl-blowgun.jpg)
+**Measuring pressure electrically.** A gauge tells an operator the pressure; a controller needs a signal. On the bench I wired a pressure transducer (0–500 PSIG, with a push-to-connect port on the process side) into a signal-conditioning circuit so its low-level output could be scaled into a usable analog reading — the link between a pneumatic circuit and a PLC analog input.
+
+![Pressure transducer wired into a breadboard signal-conditioning circuit](../images/pressure-transducer-signal-conditioning.jpg)
 
 ---
 
@@ -101,8 +103,6 @@ First contact with the **Allen-Bradley Micro820** controller, programmed over Et
 - Latching and unlatching an output, and the seal-in (holding) contact pattern.
 - Analog input scaling and comparison against a setpoint.
 - Building, downloading to the controller, and monitoring live values to confirm behavior.
-
-![Micro820 trainer with a basic ladder program](../images/plc-trainer-and-logic.jpg)
 
 Full program listings, rung-by-rung, are in [PLC Programs](03-plc-programming.md).
 

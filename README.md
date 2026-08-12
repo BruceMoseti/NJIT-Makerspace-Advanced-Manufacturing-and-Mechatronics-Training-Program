@@ -6,6 +6,12 @@ The program is a ~4 month, two-module, hands-on training cycle in industrial man
 
 This repository is the record of what I built, the programs I wrote, and the skills I can demonstrate.
 
+<p align="center">
+  <img src="images/test-stand-front-assembly.jpg" width="70%" alt="The completed motor test stand: a single-phase AC motor on an aluminum T-slot frame with a local disconnect switch and two clear-cover control enclosures fed by yellow liquid-tight cordsets">
+  <br>
+  <em><b>The capstone.</b> A motor test stand I fabricated, wired and commissioned from a bill of materials — single-phase AC motor behind a local disconnect, a breaker-protected AC supply, and a separate 24&nbsp;VDC control bus feeding an operator panel.</em>
+</p>
+
 ---
 
 ## At a glance
@@ -25,7 +31,7 @@ This repository is the record of what I built, the programs I wrote, and the ski
 - **Mechanical assembly** — work from written assembly instructions and a bill of materials, stage tools and hardware, build to spec, and verify dimensions and alignment after assembly.
 - **Electrical assembly and wiring** — lay out and wire AC and DC panels: breakers, DIN-rail terminal blocks, a 24 VDC switch-mode power supply, disconnect switch, pilot lamps, toggle switches, cordsets with strain relief, and protective bonding.
 - **PLC programming** — write, download, and debug ladder logic on a Micro820: discrete I/O, analog I/O, AND/OR logic, math and comparison blocks, counters, and timers.
-- **Sensors and actuators** — wire and test proximity sensors (inductive, magnetic, optical) and actuators including AC motors, relays, and pneumatic cylinders and grippers.
+- **Sensors, actuators and instrumentation** — wire and test proximity sensors (inductive, magnetic, optical) and actuators including AC motors, relays, and pneumatic cylinders and grippers; build the signal-conditioning stage that turns a raw analog transducer output into a usable, scaled reading.
 - **Measurement and inspection** — calipers, micrometer-class precision reading, squares, thread gauges, tape and scale; multimeter and electrical testers for continuity, voltage, and resistance.
 - **Troubleshooting and repair** — isolate faults in mechanical assemblies (alignment, wrong hardware, damage, corrosion) and electrical systems (breakers, fuses, batteries, switches and plugs), then repair and re-verify.
 - **Pneumatics** — set up and tune an FRL (filter-regulator-lubricator) supply, flow control valves, push-to-connect tubing and fittings, and cylinders.
@@ -65,27 +71,19 @@ The capstone: a bench-scale machine with a protected and bonded AC supply, a sep
 </td>
 </tr>
 <tr>
-<td width="38%"><img src="images/test-stand-dc-panel-rear.jpg" width="100%" alt="Rear of the stand showing red and black push-in DIN-rail terminal blocks distributing the 24 VDC bus"></td>
+<td width="38%"><img src="images/test-stand-dc-panel-rear.jpg" width="100%" alt="Rear of the stand: red and black push-in DIN-rail terminal blocks distributing the 24 VDC bus down to a metal sub-panel with three toggle switches and three unlit pilot lamps"></td>
 <td width="62%">
-<b>Step 4 — DC distribution</b><br><br>
-<b>What you're seeing:</b> the rear panel, where red (+24 V) and black (0 V) push-in terminal blocks distribute the control bus out to the operator panel.<br><br>
-<b>What it demonstrates:</b> a color convention held consistently so polarity is readable at a glance, with conductors dressed and left with service loops so a device can be pulled forward without putting tension on a terminal.
+<b>Step 4 — DC distribution and operator panel, wired and cold-checked</b><br><br>
+<b>What you're seeing:</b> the rear of the stand. Red (+24 V) and black (0 V) push-in terminal blocks distribute the control bus down to a metal sub-panel I laid out, drilled and populated with three toggle switches and three pilot lamps. <b>The lamps are dark here — nothing has been energized yet.</b><br><br>
+<b>What it demonstrates:</b> a polarity color convention held consistently so the bus is readable at a glance, conductors dressed with service loops so a device can be pulled forward without straining a terminal, and every run continuity-checked from terminal to device <i>before</i> power was ever applied.
 </td>
 </tr>
 <tr>
-<td width="38%"><img src="images/test-stand-dc-panel-lamps.jpg" width="100%" alt="DC operator panel with three toggle switches and red, amber and green indicator lamps"></td>
+<td width="38%"><img src="images/test-stand-dc-panel-lamps.jpg" width="100%" alt="The same DC operator panel with its red, amber and green pilot lamps now illuminated, the control bus energized"></td>
 <td width="62%">
-<b>Step 5 — Operator panel</b><br><br>
-<b>What you're seeing:</b> the metal sub-panel laid out, drilled and populated with three toggle switches and red, amber and green pilot lamps, each wired back to the terminal blocks.<br><br>
-<b>What it demonstrates:</b> panel layout and device wiring, with every conductor continuity-checked from terminal to device <i>before</i> the bus was ever energized.
-</td>
-</tr>
-<tr>
-<td width="38%"><img src="images/test-stand-front-assembly.jpg" width="100%" alt="The completed motor test stand: AC motor on the deck, local disconnect switch, and two clear-cover enclosures fed by yellow liquid-tight cordsets"></td>
-<td width="62%">
-<b>Step 6 — Finished and commissioned</b><br><br>
-<b>What you're seeing:</b> the completed stand. The motor sits on the deck behind its local disconnect switch, feeding both clear-cover enclosures through yellow liquid-tight cordsets landed in cord grips.<br><br>
-<b>Result:</b> it energized cleanly on the first attempt after the cold checks — 24 VDC present and correct on the control bus, all three pilot lamps operating from their toggles, and the motor starting, running smoothly and stopping from the local disconnect.
+<b>Step 5 — First energization</b><br><br>
+<b>What you're seeing:</b> the same panel as Step 4, now live. All three pilot lamps — red, amber and green — are <b>lit</b> and switching from their toggles.<br><br>
+<b>Result:</b> the stand came up cleanly on the first attempt after the cold checks. 24 VDC present and correct on the control bus, every lamp responding to its toggle, and the motor starting, running smoothly and stopping from the local disconnect. Comparing these two photos is the whole point of a commissioning procedure: the wiring is proven <i>before</i> it is energized, so first power-up is a confirmation rather than an experiment.
 </td>
 </tr>
 </table>
@@ -96,25 +94,17 @@ Ladder logic written in Connected Components Workbench and downloaded to an Alle
 
 <table>
 <tr>
-<td width="38%"><img src="images/plc-local-variables-table.jpg" width="100%" alt="Connected Components Workbench Local Variables table showing name, alias, data type, initial value and retentive columns"></td>
+<td width="38%"><img src="images/plc-local-variables-table.jpg" width="100%" alt="A Micro820 PLC trainer with toggle inputs, pilot lamps and an analog meter on the bench beside a monitor showing the Connected Components Workbench Local Variables table"></td>
 <td width="62%">
-<b>Before any logic — declaring the variables</b><br><br>
-<b>What you're seeing:</b> the CCW <b>Local Variables</b> table, where each variable gets a name, alias, data type, initial value and a retentive flag.<br><br>
-<b>What it demonstrates:</b> the habit of mapping I/O and declaring types <i>first</i>, then referencing the alias in the rungs, so the program reads meaningfully instead of as a wall of raw addresses like <code>_IO_EM_DI_00</code>.
-</td>
-</tr>
-<tr>
-<td width="38%"><img src="images/plc-trainer-and-logic.jpg" width="100%" alt="Micro820 PLC trainer with four toggle inputs and four indicator lamps beside a ladder program with a direct rung and a series-contact rung"></td>
-<td width="62%">
-<b>Program 1 — discrete I/O and AND logic</b><br><br>
-<b>What you're seeing:</b> the Micro820 trainer on the bench next to its program. Rung 1 is a single contact driving a coil; rung 2 puts contacts in <b>series</b>.<br><br>
-<b>What it demonstrates:</b> that contact arrangement <i>is</i> the logic — series contacts give AND, parallel branches give OR. On the trainer, flipping any single toggle on rung 2 does nothing; the lamp only lights on the last one.
+<b>The bench, and where every program starts</b><br><br>
+<b>What you're seeing:</b> the working setup. On the left is the <b>Micro820</b> and its trainer — four toggle inputs, four pilot lamps, a potentiometer and an analog meter. On screen is the CCW <b>Local Variables</b> table, where each variable gets a name, alias, data type, initial value and a retentive flag.<br><br>
+<b>What it demonstrates:</b> mapping the I/O and declaring types <i>first</i>, then referencing the alias in the rungs, so a program reads meaningfully instead of as a wall of raw addresses like <code>_IO_EM_DI_00</code>. Everything below was verified on this hardware, not in a simulator.
 </td>
 </tr>
 <tr>
 <td width="38%"><img src="images/plc-adder-function-block.jpg" width="100%" alt="Connected Components Workbench ladder rung with an ADD function block: input A is 100.0, input B is 200.0, output X is 300.0"></td>
 <td width="62%">
-<b>Program 2 — math function blocks</b><br><br>
+<b>Program 1 — math function blocks</b><br><br>
 <b>What you're seeing:</b> an <code>ADD</code> function block with <code>EN</code>/<code>ENO</code> enable gating, monitored online. Input <code>A</code> = 100.0 and <code>B</code> = 200.0, and output <code>X</code> reads <b>300.0</b>.<br><br>
 <b>What it demonstrates:</b> conditional arithmetic in ladder and correct use of the <code>REAL</code> data type. The values shown are live from the running controller, which is what actually proves the logic — not the code on its own.
 </td>
@@ -122,7 +112,7 @@ Ladder logic written in Connected Components Workbench and downloaded to an Alle
 <tr>
 <td width="38%"><img src="images/plc-counter-timer-download.jpg" width="100%" alt="Connected Components Workbench with a CTU count-up counter and a LIMIT block, the output pane reporting a successful download, and lamps lit on the trainer"></td>
 <td width="62%">
-<b>Program 3 — counters and range clamping, downloaded and running</b><br><br>
+<b>Program 2 — counters and range clamping, downloaded and running</b><br><br>
 <b>What you're seeing:</b> a <code>CTU</code> count-up counter (count input, preset, accumulated value, reset, and a done bit driving an output coil) plus a <code>LIMIT</code> clamp block on a second rung. The output pane reads <code>Download: 1 succeeded, 0 failed</code> and the lamps are lit on the trainer.<br><br>
 <b>What it demonstrates:</b> the building blocks of real machine control — event counting for batch and cycle tallies, and clamping a raw analog reading into a usable band before acting on it. Getting this right means understanding that the counter increments on the <i>rising edge</i>, not while the input is held closed.
 </td>
@@ -131,13 +121,15 @@ Ladder logic written in Connected Components Workbench and downloaded to an Alle
 
 ### Part 3 — Bench labs behind the capstone
 
+The capstone is the headline, but it works because of the instrumentation and circuit labs underneath it. These are the ones that connect a physical measurement to a number a controller can act on.
+
 <table>
 <tr>
-<td width="38%"><img src="images/pneumatics-frl-blowgun.jpg" width="100%" alt="Pneumatic circuit with a filter-regulator and pressure gauge, ball valve with quick-connect coupler, push-to-connect tubing with a tee, and a blow gun"></td>
+<td width="38%"><img src="images/pressure-transducer-signal-conditioning.jpg" width="100%" alt="A stainless-steel PSIG pressure transducer cabled into a solderless breadboard circuit built around two DIP integrated circuits, with a second breadboard alongside"></td>
 <td width="62%">
-<b>Pneumatic supply and distribution</b><br><br>
-<b>What you're seeing:</b> an FRL (filter-regulator) with its pressure gauge, a ball valve with a quick-connect coupler for isolation, and polyurethane tubing run through push-to-connect fittings and a tee out to a blow gun.<br><br>
-<b>What it demonstrates:</b> conditioning shop air and setting a working pressure against the gauge, plus the safety practice that goes with it — vent stored pressure before breaking any connection.
+<b>Pressure transducer and signal conditioning</b><br><br>
+<b>What you're seeing:</b> a stainless-steel <b>pressure transducer</b> (0–500 PSIG range, with a push-to-connect pneumatic port) cabled into a breadboard circuit I built around two DIP ICs, with a second breadboard carrying a further stage.<br><br>
+<b>What it demonstrates:</b> the full analog signal chain — take a real physical quantity, excite the sensor, condition and scale its low-level output, and hand a controller something it can actually use. This is the lab that makes the <code>LIMIT</code> clamp in Program 2 above meaningful: raw sensor readings are noisy and out-of-range, so you condition them in hardware and bound them in software.
 </td>
 </tr>
 <tr>
@@ -158,7 +150,7 @@ Ladder logic written in Connected Components Workbench and downloaded to an Alle
 </tr>
 </table>
 
-> **Note on the photos:** the image files currently in [`images/`](images/) are labelled placeholders so this section lays out correctly. Replacing any file with the real photograph under the same filename publishes it here automatically — see [`images/README.md`](images/README.md) for the filename-to-photo map.
+> All photographs on this page are my own, taken during the program. Every one shows work I did with my own hands. Click any image to view it full size; the full set is indexed in [`images/README.md`](images/README.md).
 
 ---
 

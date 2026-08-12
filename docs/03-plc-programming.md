@@ -52,8 +52,6 @@ The first working program: prove the toolchain end-to-end, then prove that conta
 
 **Observed:** flipping any single toggle on rung 2 does nothing; the lamp lights only on the last of the three. Downloaded to the controller with `1 succeeded, 0 failed, 0 up-to-date, 0 skipped, 0 error(s)` in the output pane.
 
-![Micro820 trainer with the basic ladder program](../images/plc-trainer-and-logic.jpg)
-
 ### The OR variant
 
 Parallel branches in the same rung give OR — any one closed input energizes the coil:

@@ -108,6 +108,6 @@ Full program listings, rung-by-rung, are in [PLC Programs](03-plc-programming.md
 
 ---
 
-## Week 8 — Review and catch-up
+## Week 8 — Review and cross-unit verification
 
-Used the review session to re-run the measurement and PLC labs, and to make sure the ladder programs downloaded and behaved identically on a different trainer unit than the one they were written on — a useful reminder that I/O mapping is per-machine.
+Re-ran the measurement and PLC labs, and confirmed the ladder programs downloaded and behaved identically on a different trainer unit than the one they were written on — a useful reminder that I/O mapping is per-machine.

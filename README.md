@@ -21,7 +21,7 @@ This repository is the record of what I built, the programs I wrote, and the ski
 | **Program** | Advanced Manufacturing & Mechatronics Pre-Apprenticeship Skills Training |
 | **Institution** | NJIT Makerspace, New Jersey Institute of Technology |
 | **Structure** | Introductory Module (8 weeks) + Advanced Module (weeks 9–14) |
-| **Format** | Integrated lecture + lab, ~85% attendance requirement, all assignments completed |
+| **Format** | Integrated lecture and hands-on lab for every topic |
 | **Credential** | NJIT official Certificate of Completion |
 | **Capstone** | Fabricated and commissioned an AC/DC motor test stand |
 | **Controls platform** | Allen-Bradley Micro820 PLC, programmed in ladder logic with Connected Components Workbench (CCW) |
@@ -168,22 +168,22 @@ The walkthrough above is the summary. These documents cover the same work in ful
 
 ---
 
-## Program curriculum (for reference)
+## Curriculum — topics covered
 
-Summarized from the NJIT Makerspace program description. Trainees are recruited for a full cycle rather than for individual modules, and the Introductory Module is a prerequisite for the Advanced Module.
+The technical ground covered in each module, summarized from the NJIT Makerspace program description. The Introductory Module is a prerequisite for the Advanced Module, so the skills build in this order.
 
 ### Introductory Module
 
 | Week | Topics |
 |---|---|
-| 1 | Program introduction and overview; career development; safety. Mechanical hand tools, hardware and materials — screwdrivers, shears, hammers, saws, wrenches |
+| 1 | Shop safety. Mechanical hand tools, hardware and materials — screwdrivers, shears, hammers, saws, wrenches |
 | 2 | Mechanical measurement tools — tape measures, scales, squares, thread gauges, calipers |
 | 3 | Mechanical power tools — drills, drivers, power saws. Hand finishing — files, sandpaper, steel wool, nylon mesh, abrasive pads, painting. Power finishing — grinding, sanding, buffing |
 | 4 | Fundamentals of AC and DC wiring, hardware and materials — wire gauge, plugs, batteries, junction boxes, breakers, grounding |
 | 5 | Electrical hand and measurement tools — strippers, lineman's pliers, electrical testers |
 | 6 | Pneumatic systems — regulators, filters, flow control valves, tubing and fittings, cylinders |
 | 7 | Basic mechatronics — PLC anatomy, analog and digital I/O, memory access; ladder-logic programming basics; AND/OR and analog measures; ladder logic applications |
-| 8 | Module review and catch-up session |
+| 8 | Module review — measurement and PLC labs re-run and verified |
 
 ### Advanced Module — mechanical and electrical assembly, maintenance and repair
 
@@ -196,14 +196,6 @@ Summarized from the NJIT Makerspace program description. Trainees are recruited 
 | 13 | Advanced mechatronics: PLC programming — event sequencing, continuous operation, math functions and logic expressions, counters, timers |
 | 14 | Advanced mechatronics: sensors and actuators, testing and troubleshooting — motors, pneumatic devices, grippers, relays, ultrasonic/magnetic/optical proximity sensors. Real-world applications — stepper and servo control, conveyors, robotics, automated production lines |
 
-### About the program
-
-- **Who it is for:** current and prospective technical/engineering staff in manufacturing, people in electrical or mechanical roles moving into manufacturing, and engineering or engineering-technology students at community colleges and universities.
-- **Cost:** free to admitted participants, with a stipend of up to $500 for eligible students on successful completion.
-- **Requirements:** at least 85% attendance and completion of all assignments.
-- **Program contact:** Dr. Ashish Borgaonkar, NJIT Makerspace.
-- Cycles run across 2026; applications are reviewed on a rolling basis. See the NJIT Makerspace program page for current cycle dates and the application link.
-
 ---
 
-*Repository maintained as a personal training portfolio. Curriculum details are summarized from publicly available NJIT Makerspace program information; all photographs and program write-ups are my own coursework.*
+*Repository maintained as a personal training portfolio. Curriculum topics are summarized from publicly available NJIT Makerspace program information; all photographs, programs and write-ups are my own coursework.*
